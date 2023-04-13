@@ -35,6 +35,40 @@ class BinarySearchTree{
       return root;
    }
    
+   /*
+   inserts a node into the tree
+   */
+   public void insert(int value){
+      //tree is empty
+      if(root == null){
+         root = new Node(value);
+         return;
+      }else{
+         Node current = root;
+         Node parent = null;
+         
+         while(true){
+            parent = current;
+            
+            if(value < current.value){
+               current = current.left;
+               if(current == null){
+                  parent.left = new Node(value);
+                  return;
+               }
+            }else{
+               current = current.right;
+               if(current == null){
+                  parent.right = new Node(value);
+                  return;
+               }
+            }
+           
+         }//closing while
+      
+      }//closing main if-else 
+   }
+   
    
    
    /**
