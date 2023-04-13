@@ -37,11 +37,17 @@ class BinarySearchTree{
    
    
    
-   /*
-   pre-order traversal
-   */
+   /**
+    * pre-order traversal
+    * Traverse the binary search tree in pre-order and print the values.
+    * @param root The root of the binary search tree.
+    */
    public void preOrderTraversal(Node root){
-      //implement me
+      if(root != null){
+         System.out.print(root.value + " ");
+         preOrderTraversal(root.left);
+         preOrderTraversal(root.right);
+      }
    }
 
    
