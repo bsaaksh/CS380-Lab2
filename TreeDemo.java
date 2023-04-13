@@ -67,13 +67,18 @@ class BinarySearchTree{
    
    
    
-   /*
-   post-order traversal
-   */
+   /**
+    * post-order traversal
+    * Traverse the binary search tree in post-order and print the values.
+    * @param root The root of the binary search tree.
+    */
    public void postOrderTraversal(Node root){
-      //implement me
+      if(root != null){
+         postOrderTraversal(root.left);
+         postOrderTraversal(root.right);
+         System.out.print(root.value + " ");
+      }
    }
-   
    
    
    /*
