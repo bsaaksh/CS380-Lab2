@@ -103,12 +103,19 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a smallest key
-   */
+   /**
+    * a method to find the node in the tree with a smallest key
+    * Find the node with the smallest value in the binary search tree.
+    * @param root The root of the binary search tree.
+    * @return The value of the node with the smallest value.
+    * @throws NoSuchElementException If the binary search tree is empty.
+    */
    public int getMin(Node root){
-      //implement me
+      if(root.left == null){
+         return root.value;
+      }else{
+         return getMin(root.left);
+      }           
    }
   
   
