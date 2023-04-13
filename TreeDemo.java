@@ -120,12 +120,19 @@ class BinarySearchTree{
   
   
   
-   /*
-   a method to find the node in the tree
-   with a largest key
-   */
+   /**
+    * a method to find the node in the tree with a largest key
+    * Find the node with the largest value in the binary search tree.
+    * @param root The root of the binary search tree.
+    * @return The value of the node with the largest value.
+    * @throws NoSuchElementException If the binary search tree is empty.
+    */
    public int getMax(Node root){
-	  //implement me
+      if(root.right == null){
+         return root.value;
+      }else{
+         return getMax(root.right);
+      }
    }
    
    
